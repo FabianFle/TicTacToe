@@ -4,7 +4,35 @@ html {
 
 body {
     margin: 0;
+    height: 100vh;
     font-family: 'Rubik', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.playerDiv {
+    display: flex;
+    font-size: 32px;
+    margin-bottom: 32px;
+}
+
+.playerInactive {
+    opacity: 0.5;
+}
+
+.playerDiv img {
+    height: 60px;
+    width: 60px;
+    margin-right: 16px;
+}
+
+.playerDiv div {
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+    margin-left: 16px;
 }
 
 table {
@@ -20,6 +48,12 @@ td {
     width: 133px;
     height: 133px;
     border: 5px solid black;
+    cursor: pointer;
+    transition: background-color 225ms;
+}
+
+td:hover {
+    background-color: rgba(173, 216, 230, 0.432);
 }
 
 tr:first-child td {
@@ -46,4 +80,19 @@ tr td:last-child {
     right: 0;
     width: 100px;
     height: 100px;
+}
+
+.d-none {
+    display: none;
+}
+
+.horizontalLine {
+    position: absolute;
+    height: 10px;
+    width: 350px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.makeVertical {
+    transform: rotate(90deg);
 }
