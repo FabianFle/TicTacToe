@@ -14,29 +14,40 @@
 </head>
 
 <body>
+    
+    <div class="nameEddit">
+        <h2>Namensvergebung</h2>
+        <input type="text" placeholder="Player 1, Name hinzufügen">
+        <input type="text" placeholder="Player 2, Name hinzufügen">
+        <button>Speichern</button>
+    </div>
 
-    <button class="restartBtn" onclick="restart()">Restart</button>
+    <div class="gameOverDiv">
+        <img id="gameOverImg" src="img/game-over.png" class="d-none gameOver">
+        <button id="gameOver" class="d-none restartBtn" onclick="restart()">Restart</button>
+
+    </div>
 
     <div class="playerDiv">
         <div class="playerInactive" id="player1">
-            <img src="img/circle.png"> Player 1
+            <img src="img/circle.png"> Spieler 1
         </div>
         <div>
-            <img src="img/cross.png" id="player2"> Player 2
+            <img src="img/cross.png" id="player2"> Spieler 2
         </div>
     </div>
 
     <div class="gameSpace">
-        <div id="line1" class="horizontalLine" style="top: 63px; right: 34px;"></div>
-        <div id="line2" class="horizontalLine" style="top: 204px; right: 35px;"></div>
-        <div id="line3" class="horizontalLine" style="top: 344px; right: 36px;"></div>
+        <div id="line0" class="horizontalLine" style="top: 63px; right: 34px;"></div>
+        <div id="line1" class="horizontalLine" style="top: 204px; right: 35px;"></div>
+        <div id="line2" class="horizontalLine" style="top: 344px; right: 36px;"></div>
 
-        <div id="line4" class="horizontalLine makeVertical" style="top: 206px; left: -111px;"></div>
-        <div id="line5" class="horizontalLine makeVertical" style="top: 206px; left: 30px;"></div>
-        <div id="line6" class="horizontalLine makeVertical" style="top: 206px; left: 170px;"></div>
+        <div id="line3" class="horizontalLine makeVertical" style="top: 206px; left: -111px;"></div>
+        <div id="line4" class="horizontalLine makeVertical" style="top: 206px; left: 30px;"></div>
+        <div id="line5" class="horizontalLine makeVertical" style="top: 206px; left: 170px;"></div>
 
-        <div id="line7" class="horizontalLine" style="top: 205px; right: 34px; transform: rotate(45deg) scaleX(0.0);"></div>
-        <div id="line8" class="horizontalLine" style="top: 205px; right: 34px; transform: rotate(-45deg) scaleX(0.0);"></div>
+        <div id="line6" class="horizontalLine" style="top: 205px; right: 34px; transform: rotate(45deg) scaleX(0.0);"></div>
+        <div id="line7" class="horizontalLine" style="top: 205px; right: 34px; transform: rotate(-45deg) scaleX(0.0);"></div>
 
 
         <table>
