@@ -106,7 +106,16 @@ function checkForWin() {
             document.getElementById('gameOverImg').classList.remove('d-none');
             document.getElementById('gameOver').classList.remove('d-none');
         }, 800);
+        start();
+        stop();
     }
+}
+
+
+function showNameEddit() {
+    document.getElementById('nameEdditDiv').classList.remove('d-none');
+    playerOne = [];
+    playerTow = [];
 }
 
 
@@ -142,7 +151,24 @@ function checkInputName() {
 function playerSave() {
     let onePlayer1 = document.getElementById('onePlayer').value;
     let towPlayer2 = document.getElementById('towPlayer').value;
-    onePlayer1.push(playerOne);
-    towPlayer2.push(playerTow);
+    playerOne.push(onePlayer1);
+    playerTow.push(towPlayer2);
     renderName();
 }
+
+
+// Confetti Start and Stop
+
+const start = () => {
+    setTimeout(function () {
+        confetti.start()
+    }, 1000); // 1000 is time that after 1 second start the confetti ( 1000 = 1 sec)
+};
+
+//  Stop
+
+const stop = () => {
+    setTimeout(function () {
+        confetti.stop()
+    }, 5000); // 5000 is time that after 5 second stop the confetti ( 5000 = 5 sec)
+};
