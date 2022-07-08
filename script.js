@@ -102,13 +102,47 @@ function checkForWin() {
 
     if (!!winner) {
         gameOver = true;
-        setTimeout(function(){
+        setTimeout(function () {
             document.getElementById('gameOverImg').classList.remove('d-none');
             document.getElementById('gameOver').classList.remove('d-none');
         }, 800);
     }
 }
 
+
+function renderName() {
+    let onePlayer = document.getElementById('addPlayerOne');
+    onePlayer.innerHTML = '';
+    onePlayer.innerHTML += `${playerOne}`;
+
+    let towPlayer = document.getElementById('addPlayerTwo');
+    towPlayer.innerHTML = '';
+    towPlayer.innerHTML += `${playerTow}`;
+
+    document.getElementById('onePlayer').value = '';
+    document.getElementById('towPlayer').value = '';
+
+    document.getElementById('nameEdditDiv').classList.add('d-none');
+}
+
+
+function checkInputName() {
+    let onePlayer = document.getElementById('onePlayer').value;
+    let towPlayer = document.getElementById('towPlayer').value;
+
+    if (onePlayer == '' || towPlayer == '') {
+        alert("Bitte fühlen Sie die Felder aus.")
+    } else {
+        playerSave()
+    }
+
+}
+
+
 function playerSave() {
-        
+    let onePlayer1 = document.getElementById('onePlayer').value;
+    let towPlayer2 = document.getElementById('towPlayer').value;
+    onePlayer1.push(playerOne);
+    towPlayer2.push(playerTow);
+    renderName();
 }
