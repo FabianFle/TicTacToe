@@ -201,12 +201,30 @@ function checkInputName() {
     let towPlayer = document.getElementById('towPlayer').value;
 
     if (onePlayer == '' || towPlayer == '') {
+        runWiggle();
         document.getElementById('checkNameImg').classList.remove('d-none');
         document.getElementById('checkNameSpan').classList.remove('d-none');
     } else {
         playerSave()
     }
+}
 
+// Wiggle Start and Stop
+
+function runWiggle() {
+    startWiggle();
+    setTimeout(() => {
+        endWiggle();
+    }, 300);
+}
+
+
+function startWiggle() {
+    document.getElementById('savePlayer').classList.add('wiggle');
+}
+
+function endWiggle() {
+    document.getElementById('savePlayer').classList.remove('wiggle');
 }
 
 
