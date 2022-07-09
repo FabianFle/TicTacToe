@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background-color: rgba(58, 58, 58, 0.562);
+    background-image: url(img/bg.png);
     margin: 0;
     height: 100vh;
     font-family: 'Rubik', sans-serif;
@@ -14,9 +14,12 @@ body {
 }
 
 .playerDiv {
+    height: 80px;
     display: flex;
     font-size: 32px;
     margin-bottom: 32px;
+    background-color: rgba(255, 255, 255, 0.658);
+    border-radius: 8px;
 }
 
 .playerInactive {
@@ -140,6 +143,10 @@ tr td:last-child {
     width: 100%;
 }
 
+.drawImg {
+    width: 100%;
+}
+
 .nameEddit {
     display: flex;
     justify-content: center;
@@ -147,13 +154,41 @@ tr td:last-child {
     flex-direction: column;
     z-index: 5;
     position: absolute;
-    top: 10%;
-    left: 10%;
-    right: 10%;
-    bottom: 10%;
-    background-color: lightgray;
+    top: 5%;
+    left: 5%;
+    right: 5%;
+    bottom: 5%;
+    background-image: url(img/nameBg.png);
     border-radius: 16px;
     border: 2px solid black;
+}
+
+.checkNameImg {
+    position: absolute;
+    top: 30%;
+    z-index: 6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+}
+
+.closeCheckName {
+    width: 40px;
+    height: 40px;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: red;
+    border-radius: 4px;
+    border: 2px solid black;
+}
+
+.closeCheckName:hover {
+    cursor: pointer;
+    background-color: rgb(173, 1, 1);
 }
 
 h2 {
@@ -162,6 +197,9 @@ h2 {
 }
 
 .playerInput {
+    border: 2px solid black;
+    border-radius: 8px;
+    outline: none;
     margin: 10px;
     width: 300px;
     height: 50px;
@@ -223,6 +261,10 @@ h2 {
     flex-direction: column;
 }
 
+.ticTacToe {
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.363);
+}
 
 
 @media (max-width: 700px) {

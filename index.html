@@ -16,12 +16,15 @@
 </head>
 
 <body>
+
     <div class="center">
-       <button class="edditNameBtn" onclick="showNameEddit()">Name Ändern</button>
-       <button class="restartGameBtn" onclick="restart()">Restart</button>
+        <button class="edditNameBtn" onclick="showNameEddit()">Name Ändern</button>
+        <button class="restartGameBtn" onclick="restart()">Restart</button>
     </div>
-    
+
     <div id="nameEdditDiv" class="nameEddit">
+            <span id="checkNameSpan" class="d-none closeCheckName" onclick="closeNameCheck()">X</span>
+            <img id="checkNameImg" src="img/checkName.png" class="d-none checkNameImg">
         <h2 id="h2">Namensvergebung</h2>
         <input id="onePlayer" class="playerInput" type="text" placeholder="Player 1, Name hinzufügen">
         <input id="towPlayer" class="playerInput" type="text" placeholder="Player 2, Name hinzufügen">
@@ -30,6 +33,7 @@
 
 
     <div class="gameOverDiv">
+        <img id="drawImg" src="img/draw.png" class="d-none drawImg">
         <img id="gameOverImg" src="img/game-over.png" class="d-none gameOver">
         <button id="gameOver" class="d-none restartBtn" onclick="restart()">Restart</button>
 
@@ -53,11 +57,13 @@
         <div id="line4" class="horizontalLine makeVertical" style="top: 206px; left: 30px;"></div>
         <div id="line5" class="horizontalLine makeVertical" style="top: 206px; left: 170px;"></div>
 
-        <div id="line6" class="horizontalLine" style="top: 205px; right: 34px; transform: rotate(45deg) scaleX(0.0);"></div>
-        <div id="line7" class="horizontalLine" style="top: 205px; right: 34px; transform: rotate(-45deg) scaleX(0.0);"></div>
+        <div id="line6" class="horizontalLine" style="top: 205px; right: 34px; transform: rotate(45deg) scaleX(0.0);">
+        </div>
+        <div id="line7" class="horizontalLine" style="top: 205px; right: 34px; transform: rotate(-45deg) scaleX(0.0);">
+        </div>
 
 
-        <table>
+        <table class="ticTacToe">
             <tr>
                 <td onclick="fillShape(0)">
                     <img id="circle-0" class="ticImg d-none" src="img/circle.png">

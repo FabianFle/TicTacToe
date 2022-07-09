@@ -37,6 +37,8 @@ function restart() {
     }
     document.getElementById('gameOverImg').classList.add('d-none');
     document.getElementById('gameOver').classList.add('d-none');
+    document.getElementById('drawImg').classList.add('d-none');
+
 }
 
 
@@ -100,6 +102,13 @@ function checkForWin() {
         document.getElementById('line7').style.transform = 'rotate(-45deg) scaleX(1.2)';
     }
 
+    if(fields.filter((value) => value).length == 9){
+        setTimeout(function(){
+            document.getElementById('drawImg').classList.remove('d-none');
+            document.getElementById('gameOver').classList.remove('d-none');
+        }, 800);
+    }
+
     if (!!winner) {
         gameOver = true;
         setTimeout(function () {
@@ -111,11 +120,63 @@ function checkForWin() {
     }
 }
 
+// function horizont() {
+//     if (fields[0] == fields[1] && fields[1] == fields[2] && fields[0]) {
+//         winner = fields[0];
+//         document.getElementById('line0').style.transform = 'scaleX(1)';
+//     }
+
+//     if (fields[3] == fields[4] && fields[4] == fields[5] && fields[3]) {
+//         winner = fields[3];
+//         document.getElementById('line1').style.transform = 'scaleX(1)';
+//     }
+
+//     if (fields[6] == fields[7] && fields[7] == fields[8] && fields[6]) {
+//         winner = fields[6];
+//         document.getElementById('line2').style.transform = 'scaleX(1)';
+//     }
+// }
+
+// function vertical() {
+//     if (fields[0] == fields[3] && fields[3] == fields[6] && fields[0]) {
+//         winner = fields[0];
+//         document.getElementById('line3').style.transform = 'rotate(90deg) scaleX(1)';
+//     }
+
+//     if (fields[1] == fields[4] && fields[4] == fields[7] && fields[1]) {
+//         winner = fields[1];
+//         document.getElementById('line4').style.transform = 'rotate(90deg) scaleX(1)';
+//     }
+
+//     if (fields[2] == fields[5] && fields[5] == fields[8] && fields[2]) {
+//         winner = fields[2];
+//         document.getElementById('line5').style.transform = 'rotate(90deg) scaleX(1)';
+//     }
+// }
+
+// function diagonal() {
+//     if (fields[0] == fields[4] && fields[4] == fields[8] && fields[0]) {
+//         winner = fields[0];
+//         document.getElementById('line6').style.transform = 'rotate(45deg) scaleX(1.2)';
+//     }
+
+//     if (fields[2] == fields[4] && fields[4] == fields[6] && fields[2]) {
+//         winner = fields[2];
+//         document.getElementById('line7').style.transform = 'rotate(-45deg) scaleX(1.2)';
+//     }
+// }
+
 
 function showNameEddit() {
     document.getElementById('nameEdditDiv').classList.remove('d-none');
     playerOne = [];
     playerTow = [];
+}
+
+
+function closeNameCheck() {
+    document.getElementById('checkNameImg').classList.add('d-none');
+    document.getElementById('checkNameSpan').classList.add('d-none');
 }
 
 
@@ -140,7 +201,8 @@ function checkInputName() {
     let towPlayer = document.getElementById('towPlayer').value;
 
     if (onePlayer == '' || towPlayer == '') {
-        alert("Bitte fühlen Sie die Felder aus.")
+        document.getElementById('checkNameImg').classList.remove('d-none');
+        document.getElementById('checkNameSpan').classList.remove('d-none');
     } else {
         playerSave()
     }
